@@ -51,11 +51,11 @@ Solution ILS(int maxIter, int maxIterIls, Data info, size_t n)
 {
     Solution bestOfAll;
     bestOfAll.cost = INFINITY;
-
+    /*
     double array[n][n] = info->getMatrixCost();
     Solution s = Construcao(&info, n, &bestOfAll); // Algoritmo Guloso -> Solução provavelmente temporaria feita de forma "rápida"
     Solution best = s;
-    /*
+    
     for(int i = 0; i < maxIter; i++)
     {
         Solution s = Construcao(info, n, &bestOfAll); // Algoritmo Guloso -> Solução provavelmente temporaria feita de forma "rápida"
