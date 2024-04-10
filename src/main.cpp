@@ -1,5 +1,6 @@
 #include "Data.h"
 #include "Solution.h"
+#include "Construcao.h"
 #include <iostream>
 
 using namespace std;
@@ -16,8 +17,9 @@ int main(int argc, char** argv) {
         } 
     }
     */
-    Solution sol(data.getMatrixCost(), {1,5,2,1});
-    sol.exibirSolution(sol);
+    Solution sol(data.getMatrixCost());
+    //sol.exibirSolution(sol);
+    make_construcao(sol);
     
     /*
     cout << "Dimension: " << n << endl;

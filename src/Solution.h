@@ -19,6 +19,7 @@ class Solution{
         //~Solution();
         Solution(double **matrizAdj, vector<int> clients);
 
+        void add_vertice_sequencia(int vertice, int posicao);
         void exibirSolution(Solution &s);
         void calcularCost(Solution &s);
 };

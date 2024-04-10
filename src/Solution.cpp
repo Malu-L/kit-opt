@@ -8,6 +8,10 @@ Solution::Solution(double **matrizAdj){
 
 Solution::Solution(double **matrizAdj, vector<int> clients):sequencia(clients), matrizAdj(matrizAdj){}
 
+void Solution::add_vertice_sequencia(int vertice, int posicao){
+    this->sequencia.insert(this->sequencia.begin() + posicao, vertice);
+}
+
 void Solution::exibirSolution(Solution &s){
     for(int i = 0; i < s.sequencia.size() - 1; i++){
         cout << s.sequencia[i] << " -> ";

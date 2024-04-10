@@ -1,5 +1,3 @@
-// Dúvidas: como eu consigo usar as instâncias já lidas aqui, usando makefile? aí eu juntaria os dois?
-//         É para eu fazer o relatório parcial desse mês?
 #include <iostream>
 #include <string>
 #include <vector>
