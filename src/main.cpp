@@ -1,6 +1,7 @@
 #include "Data.h"
 #include "Solution.h"
 #include "Construcao.h"
+#include "Busca_local.h"
 #include <iostream>
 
 using namespace std;
@@ -20,7 +21,10 @@ int main(int argc, char** argv) {
     Solution sol(data.getMatrixCost());
     //sol.exibirSolution(sol);
     make_construcao(sol);
-    
+    //bestImprovementSwap(&sol);
+    bestImprovement2Opt(&sol);
+    sol.exibirSolution(sol);
+
     /*
     cout << "Dimension: " << n << endl;
     cout << "DistanceMatrix: " << endl;
