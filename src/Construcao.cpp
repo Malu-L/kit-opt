@@ -23,11 +23,11 @@ Solution* Construcao::get_solution(){
 void Construcao::random_3(){
     cout << std::endl;
     s->sequencia.push_back(1);
-    srand (2); // não repetir numeros
+    srand (time(NULL)); // não repetir numeros
     int random_number;
     cout << sizeof(s->matrizAdj[0]) << std::endl;
     for (int i=0; i<3;i++){
-        random_number = rand() % sizeof(s->matrizAdj[0])+1;
+        random_number = 2 + (rand() % sizeof(s->matrizAdj[0]));
         s->sequencia.push_back(random_number);
 
         auto ptrcl = this->CL.begin();
@@ -66,15 +66,15 @@ vector<inserir_vetor> Construcao::calcular_custo_insercao(){
     return custoInsercao;
 }
 
-void Construcao::inserirNaSolucao(inserir_vetor inserido, Solution *s){
+void Construcao::inserirNaSolucao(inserir_vetor no_escolhido, Solution *s){
     auto ptrcl = this->CL.begin();
     for (int i = 0; i < this->CL.size(); i++){
-        if (*ptrcl == inserido.noInserido){
+        if (*ptrcl == no_escolhido.noInserido){
             this->CL.erase(ptrcl);
         }
         std::advance(ptrcl, 1);
     }
-    s->add_vertice_sequencia(inserido.noInserido, inserido.arestaRemovida + 1);
+    s->add_vertice_sequencia(no_escolhido.noInserido, no_escolhido.arestaRemovida + 1);
 }
 
 vector<inserir_vetor> ordenarEmOrdemCrescente(vector<inserir_vetor> custoInsercao){
