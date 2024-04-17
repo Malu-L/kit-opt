@@ -83,10 +83,10 @@ bool bestImprovementSwap(Solution *s){
 bool bestImprovement2Opt(Solution *s){
     double best_mov = 0;
     int best_ai, best_aj;
-    for(int i = 1; i < s->sequencia.size() - 1; i++){
+    for(int i = 0; i < s->sequencia.size() - 1; i++){
         int vertice_i = s->sequencia[i];
         int vertice_i_next = s->sequencia[i + 1];
-        for(int j = i + 3; j < s->sequencia.size() - 1; j++){
+        for(int j = i + 4; j < s->sequencia.size() - 1; j++){
             int vertice_j = s->sequencia[j];
             int vertice_j_prev = s->sequencia[j - 1];
             // Levando em consideração que a matriz é simétrica
@@ -102,8 +102,10 @@ bool bestImprovement2Opt(Solution *s){
 
     // ------------------------------------ essa é a melhor forma de fazer?
     if (best_mov < 0){
-        cout << "--> " << (best_aj - best_ai) << std::endl;
-        for (int i = 0; i < (best_aj - best_ai)%2+2; i++){
+        cout << "--> " << (best_aj - best_ai)/2 << std::endl;
+        cout << "best_ai: " << best_ai << std::endl;
+        cout << "best_aj: " << best_aj << std::endl;
+        for (int i = 1; i < ((best_aj - best_ai)/2)+1; i++){
             std::swap(s->sequencia[best_ai+i], s->sequencia[best_aj-i]);
         }
         s->cost = s->cost + best_mov;
