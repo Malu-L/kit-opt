@@ -2,6 +2,7 @@
 #include "Solution.h"
 #include "Construcao.h"
 #include "Busca_local.h"
+#include "ILS.h"
 #include <iostream>
 
 using namespace std;
@@ -22,7 +23,9 @@ int main(int argc, char** argv) {
     //sol.exibirSolution(sol);
     make_construcao(sol);
     //bestImprovementSwap(&sol);
-    bestImprovement2Opt(&sol);
+    //bestImprovement2Opt(&sol);
+    bestImprovementOrOpt(&sol, 3);
+    //sol = pertubacao(sol);
     sol.exibirSolution(sol);
 
     /*

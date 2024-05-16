@@ -1,5 +1,6 @@
 #include "Solution.h"
 
+Solution::Solution(){}
 
 Solution::Solution(double **matrizAdj){
     this->matrizAdj = matrizAdj;
