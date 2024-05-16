@@ -148,8 +148,8 @@ bool bestImprovementOrOpt(Solution *s, int pulo_aresta){
     // ------------------------------------ essa é a melhor forma de fazer?
     if (best_mov < 0){
         //cout << "--> " << (best_aj - best_ai)/2 << std::endl;
-        cout << "best_ai: " << best_ai << std::endl;
-        cout << "best_aj: " << best_aj << std::endl;
+        //cout << "best_ai: " << best_ai << std::endl;
+        //cout << "best_aj: " << best_aj << std::endl;
         for(int qtd_vertices = 0; qtd_vertices < pulo_aresta; qtd_vertices++){
             if(best_aj > best_ai){
                 int vertice_removido = s->sequencia[best_ai];
